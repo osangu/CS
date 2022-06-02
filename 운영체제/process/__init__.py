@@ -19,13 +19,15 @@ def sort_process(processes: List[dict]):
             for l, k in enumerate(sorted(a)):
                 answer.append({
                     'NUM': entry_vs_num[i][l],
-                    i: k
+                    'ENTER': i,
+                    'RUN': k
                 })
             continue
 
         answer.append({
             'NUM': entry_vs_num[i],
-            i: list(processes[entry_vs_num[i]].values())[0]
+            'ENTER': i,
+            'RUN': list(processes[entry_vs_num[i]].values())[0]
         })
 
     return answer
