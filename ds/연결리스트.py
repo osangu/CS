@@ -84,9 +84,9 @@ class LinkedList:
     def _find_before_node(self, data: int):
         run_node = self._init_node
         while True:
+            if run_node.data == data: raise DataAllReadyExistException(data)
             if run_node.next_node is None: return run_node
             if run_node.next_node.data > data: return run_node
-            if run_node.data == data: raise DataAllReadyExistException(data)
             run_node = run_node.next_node
 
     def _is_smallest(self, data) -> bool:
@@ -97,6 +97,8 @@ if __name__ == '__main__':
     linked_list = LinkedList(Node(3))
 
     linked_list.push(Node(1))
+
+#    linked_list.push(Node(1))
 
     linked_list.show_all_node_data()
 
